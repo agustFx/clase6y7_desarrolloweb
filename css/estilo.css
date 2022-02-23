@@ -1,0 +1,328 @@
+.grid div{
+	background-color: lightcyan;
+	border: 1px solid black;
+	color: black;
+	text-align: center;
+}
+
+.border{
+	border: 1px solid black;
+}
+
+.logoBear{
+    width: 200px;
+}
+
+.imgTextoder{
+	width: 100%;
+	height: auto;
+}
+
+li {
+	list-style-type: none;    
+	padding: 20px;
+}
+
+a{
+	text-decoration: none;
+	color: black;
+}
+
+a:hover{
+    color: teal;
+}
+
+body{
+	
+}
+
+.grid{
+	display: grid;
+	grid-template-columns: 29% 69%; /* tamaño de columna */ /* que todo sume 99% o 100% */
+	grid-template-rows: 200% 400%; /* tamaño de fila */
+	grid-column-gap: 20px; /* agrega espacios entre columnas */
+	grid-row-gap: 20px; /* agrega espacios entre filas */
+}
+
+.contenedorPadreinicio{
+	display: grid;
+	grid-template-areas: 
+	"header"
+	"main"
+	"footer";
+	grid-template-columns: 100%;
+	grid-template-rows: 100px 500px auto;
+}
+
+header{
+	grid-area: header;
+}
+
+main{
+	grid-area: main;
+}
+
+footer{
+	grid-area: footer;
+}
+
+.contenederPadreservicios{
+	display: grid;
+	grid-template-areas: 
+	"navIzq navIzq logo logo navDer navDer"
+	"encabezadoPrincipal encabezadoPrincipal encabezadoPrincipal encabezadoPrincipal encabezadoPrincipal encabezadoPrincipal"
+	"textoIzq textoIzq textoIzq textoDer textoDer textoDer"
+	"footer footer footer footer footer footer";
+	grid-template-columns: repeat(6, 1fr);
+	grid-template-rows: auto auto auto auto;
+
+}
+
+.navIzq{
+   grid-area: navIzq;
+   background-color: lightgrey;
+}
+
+.navDer{
+   grid-area: navDer;
+   background-color: lightgrey;
+}
+
+.logo{
+   grid-area: logo;
+   display: flex;
+   justify-content: center;
+   background-color: lightgrey;
+}
+
+.encabezadoPrincipal{
+   grid-area: encabezadoPrincipal;
+   display: flex;
+   justify-content: center;
+}
+
+.textoIzq{
+   grid-area: textoIzq;
+}
+
+.textoDer{
+   grid-area: textoDer;
+}
+
+.footer{
+   grid-area: footer;
+}
+
+ul{
+	display: flex;
+	justify-content: center;
+}
+
+.footerServicios{
+	display: flex;
+	justify-content: space-between;
+	background-color: lightgrey;
+}
+
+/* CLASE 7 MEDIA QUERIES */
+
+/* MEDIA QUERIE MOBILE */
+/*@media only screen and (max-width: 768px) {
+	/* ACÁ VA SELECTORA, {PROPIEDAD: VALOR;} */
+   
+   /* body{
+    	background-color: lightpink;
+    }
+
+    /*.contenederPadreservicios{
+	 display: grid;
+	 grid-template-areas: 
+	 "logo logo"
+	 "navIzq navDer"
+	 "encabezadoPrincipal encabezadoPrincipal"
+	 "textoIzq textoIzq"
+	 "textoDer textoDer"
+	 "footer footer";
+	 grid-template-columns: repeat(2, 1fr);
+	 grid-template-rows: auto auto auto auto auto auto;
+      }
+
+    .navIzq{
+      grid-area: navIzq;
+      background-color: lightgrey;
+      }
+
+    .navDer{
+      grid-area: navDer;
+      background-color: lightgrey;
+      }
+
+    .logo{
+      grid-area: logo;
+      display: flex;
+      }
+
+    .encabezadoPrincipal{
+      grid-area: encabezadoPrincipal;
+      }
+
+    .textoIzq{
+      grid-area: textoIzq;
+      }
+
+    .textoDer{
+      grid-area: textoDer;
+      }
+
+    footer{
+      grid-area: footer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      }
+
+    p{
+      color: violet;
+    }  
+    
+    .contenedorPadrecontacto{
+    	display: grid;
+    	grid-template-areas: 
+    	"logo logo"
+	    "navIzq navDer"
+	    "encabezadoPrincipal encabezadoPrincipal"
+	    "form form"
+	    "imgDer imgDer"
+	    "footer footer";
+	    grid-template-columns: repeat(2, 1fr);
+	    grid-template-rows: repeat(6, auto);
+    }
+
+    .form{
+        grid-area: form;
+    }
+
+    .imgDer{
+    	grid-area: imgDer;
+    }
+}
+
+/* MEDIA QUERIE TABLET */
+/*@media only screen and (min-width: 769px) and (max-width: 1023px) {
+    
+    body{
+    	background-color: lightgreen;
+    }
+
+    .contenederPadreservicios{
+	  display: grid;
+	  grid-template-areas: 
+	  "navIzq navIzq logo logo navDer navDer"
+	  "encabezadoPrincipal encabezadoPrincipal encabezadoPrincipal encabezadoPrincipal encabezadoPrincipal encabezadoPrincipal"
+	  "textoIzq textoIzq textoIzq textoDer textoDer textoDer"
+	  "footer footer footer footer footer footer";
+	  grid-template-columns: repeat(6, 1fr);
+	  grid-template-rows: auto auto auto auto;
+
+      }
+
+    .navIzq{
+      grid-area: navIzq;
+      background-color: lightgrey;
+      }
+
+    .navDer{
+      grid-area: navDer;
+      background-color: lightgrey;
+      }
+
+    .logo{
+      grid-area: logo;
+      display: flex;
+      justify-content: center;
+      background-color: lightgrey;
+      }
+
+    .encabezadoPrincipal{
+      grid-area: encabezadoPrincipal;
+      display: flex;
+      justify-content: center;
+      }
+
+    .textoIzq{
+      grid-area: textoIzq;
+      }
+
+    .textoDer{
+      grid-area: textoDer;
+      }
+
+    .footer{
+      grid-area: footer;
+      } 
+
+    p{
+    	color: blue;
+    }  
+}
+}
+
+/* MEDIA QUERIE DESKTOP */
+/*@media only screen and (max-width: 1024px) {
+
+    body{
+    	background-color: lightblue;
+    }
+
+    .contenederPadreservicios{
+	  display: grid;
+	  grid-template-areas: 
+	  "navIzq navIzq logo logo navDer navDer"
+	  "encabezadoPrincipal encabezadoPrincipal encabezadoPrincipal encabezadoPrincipal encabezadoPrincipal encabezadoPrincipal"
+	  "textoIzq textoIzq textoIzq textoDer textoDer textoDer"
+	  "footer footer footer footer footer footer";
+	  grid-template-columns: repeat(6, 1fr);
+	  grid-template-rows: auto auto auto auto;
+
+      }
+
+    .navIzq{
+      grid-area: navIzq;
+      background-color: lightgrey;
+      }
+
+    .navDer{
+      grid-area: navDer;
+      background-color: lightgrey;
+      }
+
+    .logo{
+      grid-area: logo;
+      display: flex;
+      justify-content: center;
+      background-color: lightgrey;
+      }
+
+    .encabezadoPrincipal{
+      grid-area: encabezadoPrincipal;
+      display: flex;
+      justify-content: center;
+      }
+
+    .textoIzq{
+      grid-area: textoIzq;
+      }
+
+    .textoDer{
+      grid-area: textoDer;
+      }
+
+    .footer{
+      grid-area: footer;
+      }
+
+    p{
+    	color: green;
+    }  
+}
+
